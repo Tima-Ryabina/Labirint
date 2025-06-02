@@ -208,10 +208,17 @@
 # quit()
 
 from pygame import *
+<<<<<<< HEAD
 import math  # Для расчёта расстояний
 
 # --- Инициализация Pygame ---
 init()
+=======
+import math  # Импортируем модуль для расчета расстояний
+init() # Инициализация Pygame
+
+# Загрузка фона и настройка окна
+>>>>>>> 3c0131d1077b2cb831ff388a03bca1286dc22b33
 background = transform.scale(image.load('sea.png'), (700, 500))
 window = display.set_mode((700, 500))
 display.set_caption('Лабиринт (Переработанная версия)')
@@ -278,9 +285,13 @@ class Weapon(GameSprite):
         # Если пуля улетает за границы экрана или врезается в стену — удаляем её
         if self.rect.x > 710 or sprite.spritecollide(self, barriers, False):
             self.kill()
+<<<<<<< HEAD
 
 
 # --- Класс оружия врага (стреляет влево) ---
+=======
+        
+>>>>>>> 3c0131d1077b2cb831ff388a03bca1286dc22b33
 class EnemyWeapon(GameSprite):
     def __init__(self, picture, w, h, x, y, x_speed, y_speed=0):
         super().__init__(picture, w, h, x, y)
@@ -347,7 +358,10 @@ class Enemy(GameSprite):
             bullet = EnemyWeapon('cannon_core.png', 20, 20, self.rect.left, self.rect.centery, -15)
             enemy_weapons.add(bullet)
             self.last_shot_time = current_time
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c0131d1077b2cb831ff388a03bca1286dc22b33
     def update(self):
         # Двигаемся между left_x и right_x
         if self.rect.x <= self.left_x:
