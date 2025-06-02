@@ -18,6 +18,7 @@ class GameSprite(sprite.Sprite):
         self.rect.y = y
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
+
 wall_1 = GameSprite('buoys_h.png', 400, 65, 5, 430)
 wall_2 = GameSprite('buoys_v.png', 65, 390, 0, 50)
 wall_3 = GameSprite('buoys_v.png', 65, 360, 125, -10)
@@ -30,9 +31,10 @@ wall_8 = GameSprite('mini_buoys_h.png', 150, 65, 405, 430)
 treasure = GameSprite('treasure.png', 150, 100, 555, 400)
 island = GameSprite('island.png', 150, 100, 555, 400)
 loss = GameSprite('loss.png', 500, 500, 100, -25)
-key = GameSprite('key.png', 150, 50, 300, 200)
+key = GameSprite('key.png', 150, 50, 500, 0)
 start_arch = GameSprite('start.png', 75, 75, 55, -10)
 finish_arch = GameSprite('finish.png', 100, 100, 550, 315)
+
 arrow_1 = GameSprite('arrow_right.png', 50, 25, 65, 430)
 arrow_2 = GameSprite('arrow_up.png', 25, 50, 260, 365)
 arrow_3 = GameSprite('arrow_right.png', 50, 25, 195, 0)
@@ -190,9 +192,7 @@ while run:
         if not enemy_4_killed and sprite.groupcollide(weapons, sprite.Group(enemy_4), True, True):
             enemy_4_killed = True
             key.reset()
-        if enemy_4_killed:
-            key.reset()
-        if sprite.collide_rect(player, key):
+        if enemy_4_killed and sprite.collide_rect(player, key):
             key.kill()
     player.update()
     enemies.update()
