@@ -1,8 +1,6 @@
 from pygame import *
 import math  # Импортируем модуль для расчета расстояний
-
-# Инициализация Pygame
-init()
+init() # Инициализация Pygame
 
 # Загрузка фона и настройка окна
 background = transform.scale(image.load('sea.png'), (700, 500))
@@ -58,7 +56,7 @@ class Weapon(GameSprite):
         self.rect.x += self.speed
         if self.rect.x > 710 or sprite.spritecollide(self, barriers, False):
             self.kill()
-
+        
 class EnemyWeapon(GameSprite):
     def __init__(self, picture, w, h, x, y, x_speed, y_speed=0):
         super().__init__(picture, w, h, x, y)
@@ -110,7 +108,6 @@ class Enemy(GameSprite):
             bullet = EnemyWeapon('cannon_core.png', 20, 20, self.rect.left, self.rect.centery, -15)
             enemy_weapons.add(bullet)
             self.last_shot_time = current_time
-    
     def update(self):
         if self.rect.x <= self.left_x:
             self.direction = 'right'
