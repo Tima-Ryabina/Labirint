@@ -158,8 +158,6 @@ while run:
                 player.x_speed = 0
     if finish != True:
         window.blit(background, (0, 0))  # Фон обновляется каждый кадр
-        if enemy_4_killed == True:
-            key.reset()
         player.reset()
         island.reset()
         treasure.reset()   
