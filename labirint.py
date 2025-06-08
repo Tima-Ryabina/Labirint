@@ -107,7 +107,6 @@ class Enemy(GameSprite):
             bullet = EnemyWeapon('cannon_core.png', 20, 20, self.rect.left, self.rect.centery, -15)
             enemy_weapons.add(bullet)
             self.last_shot_time = current_time
-    
     def update(self):
         if self.rect.x <= self.left_x:
             self.direction = 'right'
