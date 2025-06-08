@@ -130,7 +130,6 @@ enemy_weapons = sprite.Group()
 
 run = True
 finish = False
-enemy_4_killed = False
 
 font.init()
 font = font.SysFont('Arial', 100)
